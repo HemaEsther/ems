@@ -28,8 +28,9 @@ const App = () => {
 
   return (
     <>
-    {!user ? <Login handleLogin = {handleLogin} />:''}
-    {user == 'admin' ? <Admindashboard/> : <Empdashboard/>}
+    {!user && <Login handleLogin={handleLogin} />}
+    {user === 'admin' && <Admindashboard />}
+    {user === 'employee' && <Empdashboard />}
     </>
   )
 }
